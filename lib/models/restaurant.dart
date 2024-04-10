@@ -5,7 +5,7 @@ import 'food.dart';
 class Restaurant extends ChangeNotifier {
   final List<Food> _menu = [
     Food(
-      name: "classic cheese bruger",
+      name: "Classic Cheese Bruger",
       description:
           "C'est un sandwich composé d'un steak haché, de fromage fondu entre deux pains à hamburger.",
       imagePath: "lib/images/burgers/a.jpg",
@@ -34,7 +34,7 @@ class Restaurant extends ChangeNotifier {
       name: "Veggie Burger",
       description:
           "Un burger végétarien savoureux avec un steak de légumes grillés et du fromage fondant, le tout dans un pain croustillant.",
-      imagePath: "lib/images/burgers/c.jpg",
+      imagePath: "lib/images/burgers/C.jpg",
       price: 7,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -47,7 +47,7 @@ class Restaurant extends ChangeNotifier {
       name: "Aloha Burger",
       description:
           "Un hamburger exotique avec un steak juteux, du fromage fondu, de l'ananas grillé et une sauce sucrée aux épices.",
-      imagePath: "lib/images/burgers/d.jpg",
+      imagePath: "lib/images/burgers/D.jpg",
       price: 9,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -203,7 +203,7 @@ class Restaurant extends ChangeNotifier {
       name: "Brownie au chocolat",
       description:
           "Un délicieux brownie au chocolat, riche et fondant, garni de noix croquantes et servi avec une boule de crème glacée à la vanille.",
-      imagePath: "lib/images/burgers/a.jpeg",
+      imagePath: "lib/images/deserts/a.jpeg",
       price: 9,
       category: FoodCategory.desserts,
       availableAddons: [
@@ -216,7 +216,7 @@ class Restaurant extends ChangeNotifier {
       name: "Cheesecake",
       description:
           "Un cheesecake crémeux et onctueux sur une croûte de biscuits Graham, garni de fruits frais et d'un filet de coulis de fruits.",
-      imagePath: "lib/images/desserts/c.jpg",
+      imagePath: "lib/images/deserts/c.jpg",
       price: 10,
       category: FoodCategory.desserts,
       availableAddons: [
@@ -229,7 +229,7 @@ class Restaurant extends ChangeNotifier {
       name: "Tarte aux pommes",
       description:
           "Une tarte aux pommes maison avec une croûte feuilletée croustillante, des pommes fraîches et une touche de cannelle, servie avec de la crème fouettée.",
-      imagePath: "lib/images/desserts/d.jpeg",
+      imagePath: "lib/images/deserts/d.jpeg",
       price: 8,
       category: FoodCategory.desserts,
       availableAddons: [
@@ -242,7 +242,7 @@ class Restaurant extends ChangeNotifier {
       name: "Red Velvet",
       description:
           "Un gâteau Red Velvet moelleux et velouté, garni d'un glaçage au fromage à la crème et de pépites de chocolat blanc.",
-      imagePath: "lib/images/desserts/e.webp",
+      imagePath: "lib/images/deserts/e.webp",
       price: 9,
       category: FoodCategory.desserts,
       availableAddons: [
@@ -307,7 +307,7 @@ class Restaurant extends ChangeNotifier {
       name: "Caramel Macchiato",
       description:
           "Un café macchiato avec du lait chaud, de l'espresso corsé et une touche de caramel sucré, garni d'une mousse de lait onctueuse.",
-      imagePath: "lib/images/desserts/e.jpeg",
+      imagePath: "lib/images/drinks/e.webp",
       price: 7,
       category: FoodCategory.drinks,
       availableAddons: [
