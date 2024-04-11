@@ -1,4 +1,8 @@
+import 'dart:js_interop';
+
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart_item.dart';
 
 import 'food.dart';
 
@@ -99,7 +103,7 @@ class Restaurant extends ChangeNotifier {
       name: "Salade de Quinoa",
       description:
           "Une salade nutritive et colorée avec du quinoa tendre, des légumes croquants et des herbes fraîches, le tout assaisonné d'une vinaigrette légère au citron.",
-      imagePath: "lib/images/burgers/c.webp",
+      imagePath: "lib/images/salads/c.webp",
       price: 6,
       category: FoodCategory.salads,
       availableAddons: [
@@ -307,7 +311,7 @@ class Restaurant extends ChangeNotifier {
       name: "Caramel Macchiato",
       description:
           "Un café macchiato avec du lait chaud, de l'espresso corsé et une touche de caramel sucré, garni d'une mousse de lait onctueuse.",
-      imagePath: "lib/images/drinks/e.webp",
+      imagePath: "lib/images/drinks/e.jpeg",
       price: 7,
       category: FoodCategory.drinks,
       availableAddons: [
@@ -318,4 +322,36 @@ class Restaurant extends ChangeNotifier {
     ),
   ];
   List<Food> get menu => _menu;
+
+  final List<CartItem> _cart = [];
+  void addToCart(Food food, List<Addon> selectedAddons) {
+    CartItem? cartItem = _cart.firstWhereOrNull((item) {
+      bool isSameFood = item.food == food;
+      bool isSameAddons =
+          ListEquality().equals(item.selectedAddons, selectedAddons);
+      return isSameFood && isSameAddons;
+    });
+    if (cartItem != null) {
+      cartItem.quantity++;
+    } else {
+      _cart.add(
+        CartItem(
+          food: food,
+          selectedAddons: selectedAddons,
+        ),
+      );
+    }
+    notifyListeners();
+  }
+
+  void removeFromCart(CartItem cartItem) {
+    int cartIndex = _cart.indexOf(cartItem);
+    if (cartIndex != -1) {
+      if (_cart[cartIndex].quantity > 1) {
+        _cart[cartIndex].quantity--;
+      } else {
+        _cart.removeAt(cartIndex);
+      }
+    }
+  }
 }

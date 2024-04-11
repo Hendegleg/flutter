@@ -8,6 +8,7 @@ import 'package:flutter_application_1/components/my_silver_app_bar.dart';
 import 'package:flutter_application_1/components/my_tab_bar.dart';
 import 'package:flutter_application_1/models/food.dart';
 import 'package:flutter_application_1/models/restaurant.dart';
+import 'package:flutter_application_1/pages/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,7 +52,12 @@ class _HomePageState extends State<HomePage>
           final food = categoryMenu[index];
           return FoodTile(
             food: food,
-            onTap: () {},
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FoodPage(food: food),
+              ),
+            ),
           );
         },
       );
