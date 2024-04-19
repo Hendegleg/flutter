@@ -1,8 +1,9 @@
-import 'dart:js_interop';
+//import 'dart:js_interop';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/cart_item.dart';
+import 'package:intl/intl.dart';
 
 import 'food.dart';
 
@@ -322,6 +323,7 @@ class Restaurant extends ChangeNotifier {
     ),
   ];
   List<Food> get menu => _menu;
+  List<CartItem> get cart => _cart;
 
   final List<CartItem> _cart = [];
   void addToCart(Food food, List<Addon> selectedAddons) {
@@ -353,5 +355,73 @@ class Restaurant extends ChangeNotifier {
         _cart.removeAt(cartIndex);
       }
     }
+    notifyListeners();
+  }
+
+  double getTotalPrice() {
+    double total = 0.0;
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+      for (Addon addon in cartItem.selectedAddons) {
+        itemTotal += addon.price;
+      }
+
+      total += itemTotal * cartItem.quantity;
+    }
+    return total;
+  }
+
+  int getTotalItemCount() {
+    int totalItemCount = 0;
+
+    for (CartItem cartItem in _cart) {
+      totalItemCount += cartItem.quantity;
+    }
+    return totalItemCount;
+  }
+
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
+
+  String displayCartReceipt() {
+    final receipt = StringBuffer();
+    receipt.writeln("Voici votre reçu.");
+    receipt.writeln();
+
+    String formattedDate =
+        DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now());
+
+    receipt.writeln(formattedDate);
+    receipt.writeln();
+    receipt.writeln("------------------------------");
+    receipt.writeln();
+
+    for (final cartItem in _cart) {
+      receipt.writeln(
+          "${cartItem.quantity} x ${cartItem.food.name} - ${_formatPrice(cartItem.food.price)}");
+      if (cartItem.selectedAddons.isNotEmpty) {
+        receipt.writeln(
+            " Suppléments : ${_formatAddons(cartItem.selectedAddons)}");
+      }
+      receipt.writeln();
+    }
+
+    receipt.writeln("------------------------------");
+    receipt.writeln();
+    receipt.writeln("Articles au total: ${getTotalItemCount()}");
+    receipt.writeln("Prix total: ${_formatPrice(getTotalPrice())}");
+    return receipt.toString();
+  }
+
+  String _formatPrice(double price) {
+    return "${price.toStringAsFixed(2)}" "DT";
+  }
+
+  String _formatAddons(List<Addon> addons) {
+    return addons
+        .map((addon) => "${addon.name} (${_formatPrice(addon.price)})")
+        .join(", ");
   }
 }
