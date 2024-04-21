@@ -80,7 +80,7 @@ class Restaurant extends ChangeNotifier {
           "Une salade fraîche et croquante avec du poulet grillé, des croûtons dorés et du parmesan râpé, le tout nappé d'une vinaigrette César crémeuse.",
       imagePath: "lib/images/salads/a.jpeg",
       price: 6,
-      category: FoodCategory.salads,
+      category: FoodCategory.salades,
       availableAddons: [
         Addon(name: "Avocat frais", price: 5),
         Addon(name: "Oeuf dur tranché", price: 4),
@@ -93,7 +93,7 @@ class Restaurant extends ChangeNotifier {
           "Une salade méditerranéenne rafraîchissante avec des tomates juteuses, du concombre croquant, des olives kalamata et du feta émietté, assaisonnée d'une vinaigrette grecque authentique.",
       imagePath: "lib/images/salads/b.jpeg",
       price: 5,
-      category: FoodCategory.salads,
+      category: FoodCategory.salades,
       availableAddons: [
         Addon(name: "Poivrons rouges grillés", price: 4),
         Addon(name: "Persil frais haché", price: 3),
@@ -106,7 +106,7 @@ class Restaurant extends ChangeNotifier {
           "Une salade nutritive et colorée avec du quinoa tendre, des légumes croquants et des herbes fraîches, le tout assaisonné d'une vinaigrette légère au citron.",
       imagePath: "lib/images/salads/c.webp",
       price: 6,
-      category: FoodCategory.salads,
+      category: FoodCategory.salades,
       availableAddons: [
         Addon(name: "Avocat en dés", price: 5),
         Addon(name: "Graines de grenade", price: 4),
@@ -119,7 +119,7 @@ class Restaurant extends ChangeNotifier {
           "Une salade asiatique croquante avec des nouilles de riz, des légumes frais et un dressing au sésame addictif, garnie de graines de sésame grillées.",
       imagePath: "lib/images/salads/d.jpeg",
       price: 7,
-      category: FoodCategory.salads,
+      category: FoodCategory.salades,
       availableAddons: [
         Addon(name: "Edamame", price: 6),
         Addon(name: "Tofu grillé", price: 5),
@@ -132,7 +132,7 @@ class Restaurant extends ChangeNotifier {
           "Une salade copieuse avec du poulet grillé, du maïs rôti, des haricots noirs, des poivrons colorés et du cheddar râpé, le tout assaisonné d'une vinaigrette ranch épicée.",
       imagePath: "lib/images/salads/e.jpeg",
       price: 8,
-      category: FoodCategory.salads,
+      category: FoodCategory.salades,
       availableAddons: [
         Addon(name: "Guacamole frais", price: 7),
         Addon(name: "Chips de tortilla croustillantes", price: 6),
@@ -145,7 +145,7 @@ class Restaurant extends ChangeNotifier {
           "Des frites de patates douces dorées et croustillantes, saupoudrées de sel de mer et accompagnées d'une sauce à la coriandre et au citron vert.",
       imagePath: "lib/images/sides/a.jpeg",
       price: 4,
-      category: FoodCategory.sides,
+      category: FoodCategory.supp,
       availableAddons: [
         Addon(name: "Mayonnaise épicée", price: 3),
         Addon(name: "Ketchup maison", price: 2),
@@ -153,12 +153,12 @@ class Restaurant extends ChangeNotifier {
       ],
     ),
     Food(
-      name: "Onion Rings",
+      name: "ondelles d'oignon",
       description:
           "Des rondelles d'oignon croustillantes et dorées, parfaitement assaisonnées et accompagnées d'une sauce barbecue maison.",
       imagePath: "lib/images/sides/b.jpg",
       price: 8,
-      category: FoodCategory.sides,
+      category: FoodCategory.supp,
       availableAddons: [
         Addon(name: "Double portion de sauce barbecue", price: 7),
         Addon(name: "Mayonnaise à l'ail", price: 6),
@@ -171,7 +171,7 @@ class Restaurant extends ChangeNotifier {
           "Du pain moelleux fraîchement sorti du four, garni de beurre à l'ail, de persil frais et de parmesan râpé.",
       imagePath: "lib/images/sides/bread.jpeg",
       price: 7,
-      category: FoodCategory.sides,
+      category: FoodCategory.supp,
       availableAddons: [
         Addon(name: "Fromage fondu", price: 6),
         Addon(name: "Tomates séchées au soleil", price: 5),
@@ -184,7 +184,7 @@ class Restaurant extends ChangeNotifier {
           "Des frites de patates douces croustillantes garnies de guacamole frais, de salsa piquante et de crème sure.",
       imagePath: "lib/images/sides/c.jpg",
       price: 9,
-      category: FoodCategory.sides,
+      category: FoodCategory.supp,
       availableAddons: [
         Addon(name: "Cheddar fondu", price: 8),
         Addon(name: "Chili épicé", price: 7),
@@ -197,7 +197,7 @@ class Restaurant extends ChangeNotifier {
           "Des bouchées de macaroni au fromage croustillantes à l'extérieur et fondantes à l'intérieur, servies avec une sauce au fromage crémeuse.",
       imagePath: "lib/images/sides/sweetpot.jpeg",
       price: 10,
-      category: FoodCategory.sides,
+      category: FoodCategory.supp,
       availableAddons: [
         Addon(name: "Bacon émietté", price: 9),
         Addon(name: "Piments jalapeños tranchés", price: 8),
@@ -262,7 +262,7 @@ class Restaurant extends ChangeNotifier {
           "Une limonade rafraîchissante faite maison, parfumée avec des tranches de citron frais et garnie de feuilles de menthe.",
       imagePath: "lib/images/drinks/a.jpg",
       price: 6,
-      category: FoodCategory.drinks,
+      category: FoodCategory.boissons,
       availableAddons: [
         Addon(name: "Tranches de citron supplémentaires", price: 5),
         Addon(name: "Glaçons supplémentaires", price: 4),
@@ -275,7 +275,7 @@ class Restaurant extends ChangeNotifier {
           "Un thé glacé sucré et rafraîchissant, infusé avec des sachets de thé noir et garni de quartiers de citron.",
       imagePath: "lib/images/drinks/b.jpg",
       price: 5,
-      category: FoodCategory.drinks,
+      category: FoodCategory.boissons,
       availableAddons: [
         Addon(name: "Menthe fraîche", price: 4),
         Addon(name: "Tranches de citron", price: 3),
@@ -288,7 +288,7 @@ class Restaurant extends ChangeNotifier {
           "Un smoothie fruité et sain, préparé avec des fraises juteuses, des bananes mûres et du yaourt nature, mixé à la perfection.",
       imagePath: "lib/images/drinks/c.jpg",
       price: 7,
-      category: FoodCategory.drinks,
+      category: FoodCategory.boissons,
       availableAddons: [
         Addon(name: "Miel naturel", price: 6),
         Addon(name: "Flocons d'avoine", price: 5),
@@ -301,7 +301,7 @@ class Restaurant extends ChangeNotifier {
           "Un cocktail classique cubain avec du rhum blanc, du soda au citron-lime, du sucre de canne, des feuilles de menthe et des quartiers de citron vert.",
       imagePath: "lib/images/drinks/d.jpg",
       price: 8,
-      category: FoodCategory.drinks,
+      category: FoodCategory.boissons,
       availableAddons: [
         Addon(name: "Feuilles de menthe fraîche", price: 7),
         Addon(name: "Tranches de citron vert", price: 6),
@@ -314,7 +314,7 @@ class Restaurant extends ChangeNotifier {
           "Un café macchiato avec du lait chaud, de l'espresso corsé et une touche de caramel sucré, garni d'une mousse de lait onctueuse.",
       imagePath: "lib/images/drinks/e.jpeg",
       price: 7,
-      category: FoodCategory.drinks,
+      category: FoodCategory.boissons,
       availableAddons: [
         Addon(name: "Caramel supplémentaire", price: 6),
         Addon(name: "Poudre de cacao", price: 5),
@@ -322,10 +322,15 @@ class Restaurant extends ChangeNotifier {
       ],
     ),
   ];
-  List<Food> get menu => _menu;
-  List<CartItem> get cart => _cart;
 
   final List<CartItem> _cart = [];
+
+  String _deliveryAddress = "Grand Tunis - 1130";
+
+  List<Food> get menu => _menu;
+  List<CartItem> get cart => _cart;
+  String get deliveryAddress => _deliveryAddress;
+
   void addToCart(Food food, List<Addon> selectedAddons) {
     CartItem? cartItem = _cart.firstWhereOrNull((item) {
       bool isSameFood = item.food == food;
@@ -385,6 +390,11 @@ class Restaurant extends ChangeNotifier {
     notifyListeners();
   }
 
+  void updateDeliveryAddress(String newAddress) {
+    _deliveryAddress = newAddress;
+    notifyListeners();
+  }
+
   String displayCartReceipt() {
     final receipt = StringBuffer();
     receipt.writeln("Voici votre reçu.");
@@ -412,6 +422,9 @@ class Restaurant extends ChangeNotifier {
     receipt.writeln();
     receipt.writeln("Articles au total: ${getTotalItemCount()}");
     receipt.writeln("Prix total: ${_formatPrice(getTotalPrice())}");
+    receipt.writeln();
+    receipt.writeln("Livraison à : $deliveryAddress ");
+
     return receipt.toString();
   }
 

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 class MyCartTile extends StatelessWidget {
   final CartItem cartItem;
-  const MyCartTile({super.key, required this.cartItem});
+  const MyCartTile({Key? key, required this.cartItem});
 
   @override
   Widget build(BuildContext context) {
@@ -33,32 +33,33 @@ class MyCartTile extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  Flexible(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(cartItem.food.name),
-                        Text(
-                          cartItem.food.price.toString() + '\dt',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(cartItem.food.name),
+                      Text(
+                        (cartItem.food.price * cartItem.quantity)
+                                .toStringAsFixed(2) +
+                            ' dt', // Mettre à jour le prix en fonction de la quantité
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(height: 10),
+                      QuantitySelector(
+                        quantity: cartItem.quantity,
+                        food: cartItem.food,
+                        onDecrement: () {
+                          restaurant.removeFromCart(cartItem);
+                        },
+                        onIncrement: () {
+                          restaurant.addToCart(
+                              cartItem.food, cartItem.selectedAddons);
+                        },
+                      )
+                    ],
                   ),
                   const Spacer(),
-                  QuantitySelector(
-                    quantity: cartItem.quantity,
-                    food: cartItem.food,
-                    onDecrement: () {
-                      restaurant.removeFromCart(cartItem);
-                    },
-                    onIncrement: () {
-                      restaurant.addToCart(
-                          cartItem.food, cartItem.selectedAddons);
-                    },
-                  )
                 ],
               ),
             ),
@@ -75,7 +76,7 @@ class MyCartTile extends StatelessWidget {
                             label: Row(
                               children: [
                                 Text(addon.name),
-                                Text(' (\$${addon.price})'),
+                                Text(' (${addon.price} dt)'),
                               ],
                             ),
                             shape: StadiumBorder(
