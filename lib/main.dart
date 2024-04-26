@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/models/restaurant.dart';
-import 'package:flutter_application_1/services/auth/auth_gate.dart';
+
+import 'package:flutter_application_1/splashScreen.dart';
 import 'package:flutter_application_1/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const AuthGate(),
+      home: const SplashScreen(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
