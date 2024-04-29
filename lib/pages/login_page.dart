@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/my_button.dart';
 import 'package:flutter_application_1/components/my_textfield.dart';
+import 'package:flutter_application_1/pages/Forgot_pw_page.dart';
 import 'package:flutter_application_1/services/auth/auth_service.dart';
 import 'home_page.dart';
 
@@ -81,6 +82,35 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passwordController,
                 hinText: "Mot de passe",
                 obscureText: true,
+              ),
+              const SizedBox(height: 10),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return ResetPasswordScreen();
+                            },
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Mot de passe oublié ?',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
 
               const SizedBox(height: 10),
