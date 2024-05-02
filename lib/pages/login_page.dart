@@ -54,37 +54,63 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //logo
-              Icon(
-                Icons.lock_open_rounded,
-                size: 100,
-                color: Theme.of(context).colorScheme.secondary,
+              Image.asset(
+                'lib/images/loginImage/login.png',
+                width: 180,
+                height: 180,
               ),
-              const SizedBox(height: 25),
-
-              Text(
-                "Kool Express",
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Theme.of(context).colorScheme.inversePrimary,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.restaurant, // Icône de restaurant
+                    color: Colors.blue, // Couleur bleue
+                    size: 30, // Taille de l'icône
+                  ),
+                  Text(
+                    " KOOL EXPRESS", // Texte "KOOL EXPRESS"
+                    style: TextStyle(
+                      fontSize: 26, // Taille de la police
+                      fontStyle: FontStyle.italic, // Italique
+                      color: Colors.blue, // Couleur bleue
+                      fontWeight: FontWeight.bold, // Gras
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    filled: true,
+                    fillColor: Theme.of(context).colorScheme.background,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
                 ),
               ),
-              const SizedBox(height: 25),
-              MyTextField(
-                controller: emailController,
-                hinText: "Email",
-                obscureText: false,
+              const SizedBox(height: 8),
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextField(
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Mot de passe',
+                    filled: true,
+                    fillColor: Theme.of(context).colorScheme.background,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                ),
               ),
-
               const SizedBox(height: 10),
-
-              MyTextField(
-                controller: passwordController,
-                hinText: "Mot de passe",
-                obscureText: true,
-              ),
-              const SizedBox(height: 10),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -112,23 +138,18 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
-
               const SizedBox(height: 10),
-
               MyButton(
                 text: "Se connecter",
                 onTap: login,
               ),
-
               const SizedBox(height: 25),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Non membre ?",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary),
+                    style: TextStyle(color: Colors.blue),
                   ),
                   const SizedBox(width: 4),
                   GestureDetector(

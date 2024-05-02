@@ -71,10 +71,12 @@ flutter:
   assets:
     - lib/images/burgers/
     - lib/images/sides/
+    - lib/images/loginImage/
     - lib/images/salads/
     - lib/images/drinks/
     - lib/images/deserts/
     - lib/Lottie/animation.json
+    
   # -images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

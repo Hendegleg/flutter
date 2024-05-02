@@ -29,7 +29,7 @@ class MySilverAppBar extends StatelessWidget {
       ],
       backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text("Dîner au crépuscule"),
+      title: Text("Kool Express"),
       flexibleSpace: FlexibleSpaceBar(
         background:
             Padding(padding: const EdgeInsets.only(bottom: 50.0), child: child),
