@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Onboboarding/onboarding_view.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:lottie/lottie.dart';
@@ -34,7 +35,7 @@ class SplashScreen extends StatelessWidget {
           ],
         ),
       ),
-      nextScreen: AuthGate(),
+      nextScreen: OnboardingView(),
       splashIconSize: 400,
       backgroundColor: const Color.fromARGB(255, 203, 222, 255),
     );

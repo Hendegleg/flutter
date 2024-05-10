@@ -27,6 +27,8 @@ class _RegisterPageState extends State<RegisterPage> {
           emailController.text,
           passwordController.text,
         );
+        
+
       } catch (e) {
         showDialog(
           context: context,
@@ -112,9 +114,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextField(
                   controller: confirmPasswordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Confirmer Mot de passe',
                     filled: true,
+                    
                     fillColor: Theme.of(context).colorScheme.background,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
