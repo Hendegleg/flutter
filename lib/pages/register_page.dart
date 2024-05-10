@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/my_button.dart';
 import 'package:flutter_application_1/components/my_textfield.dart';
+import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -27,8 +28,12 @@ class _RegisterPageState extends State<RegisterPage> {
           emailController.text,
           passwordController.text,
         );
-        
 
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => LoginPage(onTap: widget.onTap)),
+        );
       } catch (e) {
         showDialog(
           context: context,
@@ -39,10 +44,10 @@ class _RegisterPageState extends State<RegisterPage> {
       }
     } else {
       showDialog(
-        context: context,
-        builder: (context) => const AlertDialog(
-            title: Text("Les mots de passe ne correspondent pas! ")),
-      );
+          context: context,
+          builder: (context) => const AlertDialog(
+                title: Text("Les mots de passe ne correspondent pas! "),
+              ));
     }
   }
 
